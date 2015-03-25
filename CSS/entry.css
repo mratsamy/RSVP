@@ -1,0 +1,53 @@
+#lastname{
+	width: 100%;
+}
+#firstname{
+	width: 100%;
+}
+.form-control{
+	height:115%;
+	line-height: 115%;
+}
+.jumbotron{
+	text-align: center;
+}
+.logout{
+	padding-right: 15px;
+}
+.addPadding{
+	padding-bottom: 15px;
+}
+.btn{
+	margin-top: 15px;
+}
+#numAttending{
+	width: 100%;
+}
+button{
+	width: 100%;
+}
+.btn-default{
+	width: 180px;
+}
+#dropdownMenu1{
+	width: 100%;
+}
+.dropdown-menu{
+	margin-left: 15px;
+	text-align: center;
+	width: 93%;
+}
+#rsvpNumber{
+	margin-top: 15px;
+}
+.dlButton{
+	margin-top: 20px;
+	margin-bottom: 25px;
+	height: 60px;
+	border-radius: 4px;
+	border: 1px solid black;
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a{
+	background-image: none;
+	background-color: #9CBDFF;
+}
