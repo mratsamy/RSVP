@@ -10,6 +10,8 @@
 			if($_SESSION['timer']+15*60 < time()){
 				header ("Location: index.php");
 				unset($_SESSION['login']);
+			}else{
+				$_SESSION['timer'] = time();
 			}
 		?>
 		<title>Rehearsal Reports</title>
@@ -18,7 +20,7 @@
 	</head>
 	<body>
 	<div class="jumbotron">
-		<a class="pull-right logout" href="logout.php">Logout</a>
+		<a class="pull-right logout" href="PHP-scripts/logout.php">Logout</a>
 		<h1>Rehearsal Reports</h1>
 		<div class="btn-group" role="group"	aria-label="">
 			<a type="button" class="btn btn-default" href="welcome.php">Home</a>
@@ -28,15 +30,18 @@
 			<a type="button" class="btn btn-default" href="rehearsalRSVP.php">Enter Rehearsal Guest</a>
 		</div>
 	</div>
-	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='#'">Download All</button>
-	</div>
-	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='#'">Download Yes</button>
-	</div>
-	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='#'">Download No</button>
-	</div>
+	<div class="main">
+		<form method="POST" action="PHP-scripts/rehearsalCSV.php">
+			<div class="col-md-4">
+				<button class="btn dlButton" name="downloads" value="ALL" onclick="location.href='PHP-scripts/rehearsalCSV.php'">Download All</button>
+			</div>
+			<div class="col-md-4">
+				<button class="btn dlButton" name="downloads" value="YES" onclick="location.href='PHP-scripts/rehearsalCSV.php'">Download Yes</button>
+			</div>
+			<div class="col-md-4">
+				<button class="btn dlButton" name="downloads" value="NO" onclick="location.href='PHP-scripts/rehearsalCSV.php'">Download No</button>
+			</div>
+		</form>
 	</body>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
 	</script>

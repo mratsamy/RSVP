@@ -10,6 +10,8 @@
 			if($_SESSION['timer']+15*60 < time()){
 				header ("Location: index.php");
 				unset($_SESSION['login']);
+			}else{
+				$_SESSION['timer'] = time();
 			}
 		?>
 		<title>Person Attending</title>
@@ -18,7 +20,7 @@
 	</head>
 	<body>
 	<div class="jumbotron">
-		<a class="pull-right logout" href="logout.php">Logout</a>
+		<a class="pull-right logout" href="PHP-scripts/logout.php">Logout</a>
 		<h1>Welcome Home</h1>
 		<div class="btn-group" role="group"	aria-label="">
 			<a type="button" class="btn btn-default" href="welcome.php">Home</a>

@@ -1,4 +1,19 @@
 <?php
+    
+    //checks to see if the user is logged in
+    session_start();
+
+    if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+    header ("Location: ../index.php");
+    }
+
+    if($_SESSION['timer']+15*60 < time()){
+        header ("Location: ../index.php");
+        unset($_SESSION['login']);
+    }else{
+        $_SESSION['timer'] = time();
+    }
+
 	$host             = "localhost";
 	$dbname           = "WeddingDatabase";
 	$user             = "weddingWebsite";
@@ -46,13 +61,13 @@
 
     echo $output;
 
-    header("Location:report.php");
+    header("Location:../report.php");
 
     }
 	catch(PDOException $e) {
 	    echo $e->getMessage();
 	    sleep(15);
-	    header("Location:report.php");
+	    header("Location:../report.php");
 	}
 
 ?>

@@ -10,6 +10,8 @@
 			if($_SESSION['timer']+15*60 < time()){
 				header ("Location: index.php");
 				unset($_SESSION['login']);
+			}else{
+				$_SESSION['timer'] = time();
 			}
 		?>
 		<title>Person Attending</title>
@@ -18,7 +20,7 @@
 	</head>
 	<body>
 	<div class="jumbotron">
-		<a class="pull-right logout" href="logout.php">Logout</a>
+		<a class="pull-right logout" href="PHP-scripts/logout.php">Logout</a>
 		<h1>Reporting Data</h1>
 		<div class="btn-group" role="group"	aria-label="">
 			<a type="button" class="btn btn-default" href="welcome.php">Home</a>
@@ -30,13 +32,13 @@
 	</div>
 	<body>
 	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='generateCSV.php'">Download All</button>
+		<button class="btn dlButton" onclick='location.href="/rsvp/PHP-scripts/generateCSV.php"'>Download All</button>
 	</div>
 	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='generateCSVYes.php'">Download Yes</button>
+		<button class="btn dlButton" onclick="location.href='/rsvp/PHP-scripts/generateCSVYes.php'">Download Yes</button>
 	</div>
 	<div class="col-md-4">
-		<button class="btn dlButton" onclick="location.href='generateCSVNo.php'">Download No</button>
+		<button class="btn dlButton" onclick="location.href='/rsvp/PHP-scripts/generateCSVNo.php'">Download No</button>
 	</div>
 	</body>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

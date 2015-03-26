@@ -9,7 +9,7 @@
 		session_start();
 		$_SESSION['login'] = "1";
 		$_SESSION['timer'] = time();
-		header("Location:welcome.php");
+		header("Location:../welcome.php");
 	}
 	else
 	{
@@ -17,7 +17,7 @@
 		session_start();
 		$_SESSION['login'] = '';
 		echo "<center><h1>invalid login</h1></center>";
-		echo "<script>setTimeout(\"location.href = 'index.php';\",1500);</script>";
+		echo "<script>setTimeout(\"location.href = '../index.php';\",1500);</script>";
 	}
 
 ?>

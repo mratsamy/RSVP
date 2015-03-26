@@ -13,7 +13,7 @@
 		<div class="col-md-4 col-xs-1">
 		</div>
 		<div id="main-container" class="col-md-4 col-xs-10 text-center">
-			<form class="form-signin" action="LoginCheck.php" method="POST">
+			<form class="form-signin" action="PHP-scripts/LoginCheck.php" method="POST">
 				<h2>Sign In Information</h2>
 				<div class="col-md-10" id="username">
 					<input name="username" id="username" class="form-control" placeholder="Username" required autofocus>

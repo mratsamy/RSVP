@@ -10,6 +10,8 @@
 		if($_SESSION['timer']+15*60 < time()){
 			header ("Location: index.php");
 			unset($_SESSION['login']);
+		}else{
+			$_SESSION['timer'] = time();
 		}
 	?>
 		<title>Person Attending</title>
@@ -18,7 +20,7 @@
 	</head>
 	<body>
 	<div class="jumbotron">
-		<a class="pull-right logout" href="logout.php">Logout</a>
+		<a class="pull-right logout" href="PHP-scripts/logout.php">Logout</a>
 		<h1>Enter RSVP Data</h1>
 		<div class="btn-group" role="group"	aria-label="">
 			<a type="button" class="btn btn-default" href="welcome.php">Home</a>
@@ -31,7 +33,7 @@
 	<div class="col-md-3">
 	</div>
 	<div class="col-md-8 col-xs-12">
-		<form action="EnterDB.php" method="POST">
+		<form action="PHP-scripts/EnterDB.php" method="POST">
 		<div class="col-md-5 col-xs-12">
 		<input required autofocus id="lastname" placeholder="Last Name" class="form-control addPadding" name="lastname">
 		</div>
