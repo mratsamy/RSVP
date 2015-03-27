@@ -4,6 +4,10 @@
 #firstname{
 	width: 100%;
 }
+#lastnameLetter{
+	width:100%;
+	line-height: 115%;
+}
 .form-control{
 	height:115%;
 	line-height: 115%;
@@ -63,4 +67,9 @@ button{
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a{
 	background-image: none;
 	background-color: #9CBDFF;
+}
+.scrollable-menu{
+	height: auto;
+	max-height: 200px;
+	overflow-x: hidden;
 }
