@@ -1,4 +1,4 @@
-<? php
+<?php
 
 function connect(){
 	global $pdo;
@@ -15,21 +15,21 @@ function connect(){
 		print_r($e->getMessage());
 	    sleep(15);
 	    echo "<script>setTimeout(\"location.href = '../entry.php';\",500);</script>";
-	}
+	}	
 }
 
 function verifySession(){
 	session_start();
 
 	if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-	header ("Location: ../index.php");
-	}
-
-	if($_SESSION['timer']+(15*60) < time()){
-		unset($_SESSION['login']);
-		header ("Location: ../index.php");
+	header ("Location: https://www.wedding.mratsamy.com/rsvp/index.php");
 	}else{
-		$_SESSION['timer'] = time();
+		if($_SESSION['timer']+15*60 < time()){
+			unset($_SESSION['login']);
+			header ("Location: https://www.wedding.mratsamy.com/rsvp/index.php");
+		}else{
+			$_SESSION['timer'] = time();
+		}
 	}
 }
 

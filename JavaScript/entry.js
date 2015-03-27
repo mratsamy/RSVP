@@ -17,6 +17,7 @@ $(document).ready(function(){
 
 	$('.dropdown-menu a').click(function(){
 		var holder = $(this).html();
+
 		$('#dropdownMenu1').text(holder + " ");
 		$('#dropdownMenu1').append('<span class="caret"></span>');
 		$('.dropdown-menu').hide();
