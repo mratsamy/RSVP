@@ -28,6 +28,7 @@
 			<a type="button" class="btn btn-default" href="rehearsal.php">Rehearsal Reports</a>
 			<a type="button" class="btn btn-default" href="entry.php">Enter Wedding Guest</a>
 			<a type="button" class="btn btn-default" href="rehearsalRSVP.php">Enter Rehearsal Guest</a>
+			<a type="button" class="btn btn-default" href="enterGift.php">Enter Wedding Gift</a>
 		</div>
 	</div>
 	

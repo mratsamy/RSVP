@@ -30,56 +30,35 @@
 			<a type="button" class="btn btn-default" href="rehearsal.php">Rehearsal Reports</a>
 			<a type="button" class="btn btn-default" href="entry.php">Enter Wedding Guest</a>
 			<a type="button" class="btn btn-default" href="rehearsalRSVP.php">Enter Rehearsal Guest</a>
+			<a type="button" class="btn btn-default" href="enterGift.php">Enter Wedding Gift</a>
 		</div>
 	</div>
 	<div class="col-md-3">
 	</div>
 	<div class="main col-md-8">
-		<form id="dropdownQuery" action="#.php" method="POST">
 			<div class="dropdown col-md-4">
+				<label>SELECT FIRST LETTER OF LAST NAME</label>
 				<button class="btn btn-default dropdown-toggle open" type="dropdown" id="lastnameLetter" data-toggle="dropdown" aria-expanded="true">
-					SELECT Last Name&nbsp;<span class="caret"></span>
+					Last Name&nbsp;<span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu" role="menu">
+				<ul class="dropdown-menu scrollable-menu" role="menu">
 					<?php
 						$alphabet = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 						foreach($alphabet as $letter){
-							echo "<li role='menuitem'><a href='#' onclick='$('#letterInput').val($letter)>$letter</a></li>";
+							echo "<li role='menuitem'><a href='#' onclick='$('#letterInput').val($letter);'>$letter</a></li>";
 						}
-						<li role="menuitem" id="dropfocus" value="true"><a href="#" onclick="$('#boolAttending').val(1);">Yes</a></li>
 					?>
 				</ul>
-				<input id="letterInput" class="form-control" type="hidden" name="letter" />
 			</div>
-			<div class="col-md-4" id="list">
-				<?php if(isset($guests)) :?>
-				<div class="list-group">
-					<?php
-						foreach($guests as $gName){
-							echo "<a href='#' class='list-group-item'>$gName->lastname.', '.$gName->firstname</a>";
-						}
-					?>
-				</div>
-			</div>
-			<div class="col-md-8 col-xs-12" id="memo">
-				<h2>Wedding Gift</h2>
-				<form id="weddingGift" action='giftSubmission.php' method="POST">
-					<div class="form-group">
-						<textarea class="form-control" rows="10" id="giftInfo" name="stringGift">
-							<?php if(isset($guests)) :?>
-							<?php
-								echo "$guests->gift";
-							?>
-						</textarea>
-					</div>
-					<button type="submit" class="btn" id="weddingGiftPost">Submit</button>
-				</form>
-			</div>
+		<form id="dropdownQuery" action="PHP-scripts/weddingGiftDB.php" method="POST">
+				<input id="letterInput" class="form-control" type="hidden" name="letter" value="" />
 		</form>
+
+		<!-- -->
 	</div>
 </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="JavaScript/gift.js"></script>
 </html>

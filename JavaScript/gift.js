@@ -3,11 +3,10 @@ $(document).ready(function(){
 
 	$('.dropdown-menu').hide();
 	
-	$('#dropdownButton').click(function(){
+	$('#lastnameLetter').click(function(){
 		if(value == false){
 			$('.dropdown-menu').show();
 			value = true;
-			$('dropfocus').focus();
 		}
 		else{
 			$('.dropdown-menu').hide();
@@ -17,10 +16,19 @@ $(document).ready(function(){
 
 	$('.dropdown-menu a').click(function(){
 		var holder = $(this).html();
-		$('#dropdownButton').text(holder + " ");
+		$('#lastnameLetter').text(holder + " ");
+		$('#lastnameLetter').append('<span class="caret"></span>');
 		$('.dropdown-menu').hide();
-		$('#numAttending').focus();
 		value = false;
-		$('#dropdownQuery').submit();
+		var data = getData($('#letterInput').val());
+		$.post('PHP-scripts/weddingGiftDB', data, function(results){
+			console.log(results);
+		});
 	});
+
+	function getData(value){
+		return	{
+			letter: "\""+ value + "\""
+		}
+	}
 });

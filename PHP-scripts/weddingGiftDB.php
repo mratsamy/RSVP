@@ -20,14 +20,17 @@
 	$host  	= "localhost";
 	$dbname	= "WeddingDatabase";
 
+	$letter = $_POST['letter'];
+
 	try{
 		$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 
-		$STH = $DBH->prepare("INSERT INTO rsvpInfo(id, lastname, firstname, attending, numGuests) value 
-			(:rsvpNumber, :lastname, :firstname, :boolAttending, :numAttending)");
-		$STH->bindParam('rsvpNumber', $rsvpNumber);
+		$STH = $DBH->prepare("SELECT id, lastname, firstname FROM rsvpInfo WHERE 
+		lastname LIKE ':letter%'"; 
+		$STH->bindParam('letter', $letter);
 
 	$STH->execute();
+	return $STH->fetchAll(PDO::FETCH_OBJ);
 	//echo "<script>setTimeout(\"location.href = '../entry.php';\",500);</script>";
 
 	//header("Location:entry.php");

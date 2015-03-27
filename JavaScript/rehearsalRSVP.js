@@ -18,6 +18,7 @@ $(document).ready(function(){
 	$('.dropdown-menu a').click(function(){
 		var holder = $(this).html();
 		$('#dropdownButton').text(holder + " ");
+		$('#dropdownButton').append('<span class="caret"></span>');
 		$('.dropdown-menu').hide();
 		$('#numAttending').focus();
 		value = false;
