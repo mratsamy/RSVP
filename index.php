@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+<? php include "_parcials/header"; ?>	
 	<head>
 		<title>Wedding RSVP Log</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="CSS/main.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
-		</script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -23,6 +20,4 @@
 					<button class="btn btn-md" type="submit">ENTER</button>
 				</div>
 		</div>
-	</body>
-
-</html>
+<? php include '_parcials.footer.php'; ?>
