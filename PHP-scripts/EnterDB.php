@@ -7,8 +7,8 @@
 	}
 
 	if($_SESSION['timer']+15*60 < time()){
-		header ("Location: ../index.php");
 		unset($_SESSION['login']);
+		header ("Location: ../index.php");
 	}else{
 		$_SESSION['timer'] = time();
 	}

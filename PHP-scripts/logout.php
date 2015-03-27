@@ -3,4 +3,3 @@
 	unset($_SESSION['timer']);
 	unset($_SESSION['login']);
 	header("Location: index.php");
-?>

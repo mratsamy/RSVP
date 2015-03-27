@@ -19,5 +19,3 @@
 		echo "<center><h1>invalid login</h1></center>";
 		echo "<script>setTimeout(\"location.href = '../index.php';\",1500);</script>";
 	}
-
-?>
