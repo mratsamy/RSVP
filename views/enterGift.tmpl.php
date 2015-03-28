@@ -9,8 +9,9 @@
 	<div class="col-md-3">
 	</div>
 	<div class="main col-md-8">
-			<div class="dropdown col-md-4">
+			<div class="dropdown col-md-4 col-xs-12">
 				<label>SELECT FIRST LETTER OF LAST NAME</label>
+				<div class="col-md-4 col-xs-12">
 				<button class="btn btn-default dropdown-toggle open" type="dropdown" id="lastnameLetter" data-toggle="dropdown" aria-expanded="true">
 					Last Name&nbsp;<span class="caret"></span>
 				</button>
@@ -22,6 +23,7 @@
 						}
 					?>
 				</ul>
+			</div>
 			</div>
 		<form id="dropdownQuery" action="../PHP-scripts/weddingGiftDB.php" method="POST">
 				<input id="letterInput" class="form-control" type="hidden" name="letter" value="" />

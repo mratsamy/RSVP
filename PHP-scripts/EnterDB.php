@@ -1,5 +1,5 @@
 <?php
-	include "/PHP-scripts/functions.php";
+	require "/PHP-scripts/functions.php";
 	//checks if the user is logged in
 	verifySession();
 

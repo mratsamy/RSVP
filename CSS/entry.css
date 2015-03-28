@@ -41,6 +41,10 @@ button{
 	width: 100%;
 	line-height: 115%;
 }
+#lastnameLetter{
+	width: 100%;
+	line-height: 115%;
+}
 .dropdown-menu{
 	margin-left: 15px;
 	text-align: center;
